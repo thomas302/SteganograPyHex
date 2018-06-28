@@ -2,6 +2,8 @@
 """
 Created on Tue Jun 27 13:49:21 2018
 @author: Joel Velez
+
+A program  to encode and decode data hidden in images or any other type of file
 """
 import encode
 import decode

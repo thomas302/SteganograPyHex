@@ -25,7 +25,7 @@ class stringTools():
             s = s[n:]
         return o
 
-    
+#Tools to dump hex files, write hex to files and read characters from files    
 class fileTools():
     def hexDumpFile(self, userInput):
         chunks = []
