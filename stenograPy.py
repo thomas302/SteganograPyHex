@@ -13,10 +13,16 @@ class stenograPy():
     def main(self):
         a = input("Would you like to encode(E) or decode(d) \n press x to exit \n")
         if a == "e" or a == "E":
-            self.e.encodeMain()
+            string = input("Enter text to hide \n")
+            inputFile = input("Enter input file name with extension \n")
+            outPutFile = input("Enter output file name with extension \n")
+            string = bytes(string, "ascii")
+            self.e.encodeMain(string, inputFile, outPutFile)
         elif a == "d" or a == "D":
-            self.d.decodeMain()
+            inputFile = input("Enter file to decode with extension \n")
+            self.d.decodeMain(inputFile)
 
 if __name__ == '__main__':
-    stenograPy.main()
+    s = stenograPy()
+    s.main()
             
