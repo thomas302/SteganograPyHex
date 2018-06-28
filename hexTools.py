@@ -9,11 +9,22 @@ import binascii
 
 class stringTools():
     def stringToHex(self, userInput):
-        a = binascii.hexlify(userInput)
+        a = binascii.hexlify(b''.join(userInput))
         return a
+    
     def hexToString(self, userInput):
-        a = binascii.unhexlify(userInput)
+        a = binascii.unhexlify(b''.join(userInput))
         return a
+    
+    def splitByN(seq, n):
+        """A generator to divide a sequence into chunks of n units."""
+        s = seq
+        o = []
+        while s:
+            o.append(s[:n])
+            s = s[n:]
+        return o
+
     
 class fileTools():
     def hexDumpFile(self, userInput):
@@ -22,6 +33,7 @@ class fileTools():
             for chunk in iter(lambda: f.read(8), b''):
                 chunks.append(binascii.hexlify(chunk))
         return chunks
+    
     def readChar(self, userInput):
         charListTemp = []
         charListFinal = []
@@ -31,6 +43,7 @@ class fileTools():
         for i in range(len(charListTemp)):
             charListFinal.append(charListTemp[i][6:])
         return charListFinal
+    
 if __name__=='__main__':
     st = stringTools()
     ft = fileTools()

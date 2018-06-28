@@ -7,8 +7,9 @@ import hexTools
 
 class Decode():
     def __init__(self):
-        self.decoded = []
+        self.decoded = ''
         self.ft = hexTools.fileTools()
         self.st = hexTools.stringTools()
         
-    def decode(self):
+    def decodeMain(self):
+        pass
