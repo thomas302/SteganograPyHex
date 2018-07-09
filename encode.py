@@ -10,7 +10,7 @@ class Encode():
         self.st = hexTools.stringTools()
         
     def replaceBytes(self, byteList, hexStringList):
-        for i in range(len(3, hexStringList)):
+        for i in range(len(hexStringList)):
             byteList[i] = byteList[i] + hexStringList[i]
         return byteList
     def encodeData(self, f, s):
@@ -28,9 +28,8 @@ class Encode():
         file = self.ft.hexDumpFile(inputFile)
         fileOut = self.encodeData(file, s)
         self.ft.writeToFile(fileOut, outPutFile)
-        
-if __name__ == "__main__":
-    e = Encode()
-    e.encodeMain(b"this is text", "data.png", "stuff.png")
 
         
+if __name__  ==  "__main__":
+    e = Encode()
+    e.encodeMain(b"this is text", "data.png", "stuff.png")

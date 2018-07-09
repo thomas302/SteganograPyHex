@@ -8,12 +8,13 @@ A program  to encode and decode data hidden in images or any other type of file
 import encode
 import decode
         
-class stenograPy():
+class steganograPy():
     def __init__(self):
         self.e = encode.Encode()
         self.d = decode.Decode()
+
     def main(self):
-        a = input("Would you like to encode(E) or decode(d) \n press x to exit \n")
+        a = input("Would you like to encode(E) or decode(D) \n press x to exit \n")
         if a == "e" or a == "E":
             string = input("Enter text to hide \n")
             inputFile = input("Enter input file name with extension \n")
@@ -24,7 +25,7 @@ class stenograPy():
             inputFile = input("Enter file to decode with extension \n")
             self.d.decodeMain(inputFile)
 
+
 if __name__ == '__main__':
-    s = stenograPy()
+    s = steganograPy()
     s.main()
-            

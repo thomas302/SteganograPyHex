@@ -3,8 +3,8 @@
 Created on Tue Jun 27 13:49:21 2018
 @author: Joel Velez
 """
-#Basic tools for working with hex data
-#Hex String Tools
+# Basic tools for working with hex data
+# Hex String Tools
 import binascii
 
 class stringTools():
@@ -16,27 +16,29 @@ class stringTools():
         a = binascii.unhexlify(b''.join(userInput))
         return a
     
-    def splitByN(self, seq, n):
-        """A generator to divide a sequence or string into chunks of n units."""
-        s = seq
+    def splitByN(self, string, n):
+        """A generator to divide string into chunks of n units."""
+        s = string
         o = []
         while s:
             o.append(s[:n])
             s = s[n:]
         return o
 
-#Tools to dump hex files, write hex to files and read characters from files    
-class fileTools():
+# Tools to dump hex files, write hex to files and read characters from files
+class fileTools:
     def hexDumpFile(self, userInput):
         chunks = []
         with open(userInput, 'rb') as f:
             for chunk in iter(lambda: f.read(8), b''):
                 chunks.append(binascii.hexlify(chunk))
         return chunks
+
     def writeToFile(self, byteList, fileOut):
         with open(fileOut, 'wb') as fout:
             byteList = b''.join(byteList)
             fout.write(binascii.unhexlify(byteList))
+
     def readChar(self, userInput):
         charListTemp = []
         charListFinal = []
@@ -46,8 +48,9 @@ class fileTools():
         for i in range(len(charListTemp)):
             charListFinal.append(charListTemp[i][14:])
         return charListFinal
-    
-if __name__=='__main__':
+
+
+if __name__ == '__main__':
     st = stringTools()
     ft = fileTools()
     
